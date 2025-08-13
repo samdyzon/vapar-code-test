@@ -1,0 +1,12 @@
+{
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "--ds=vapar.settings.local",
+        "-p",
+        "no:warnings",
+        "--no-cov"
+    ],
+    "python.testing.cwd": "${workspaceFolder}",
+    "python.defaultInterpreterPath": "../.venv/bin/python",
+    "python.analysis.extraPaths": ["${workspaceFolder}/vapar"]
+}

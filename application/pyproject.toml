@@ -1,0 +1,19 @@
+[project]
+name = "vapar"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Sam Dyson",email = "mail@samdyson.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13.6"
+
+django = ">=5.2.5,<6.0.0"
+djangorestframework = ">=3.16.1,<4.0.0"
+httpx = ">=0.28.1,<0.29.0"

@@ -1,8 +1,8 @@
 {
     "folders": [
         {
-            "name": "@vapar/backend",
-            "path": "vapar"
+            "name": "@vapar/application",
+            "path": "application"
         },
         {
 			"name": "@vapar/repository",
@@ -11,8 +11,9 @@
     ],
     	"settings": {
 		"files.exclude": {
-			"vapar": true,
+			"application": true,
 			".yarn": true,
+			"**/*.egg-info": true,
 			"node_modules": true,
 			"libs": true,
 			"**/__pycache__": true,
