@@ -4,6 +4,12 @@
 __metadata:
   version: 6
 
+"@vapar/app@workspace:application":
+  version: 0.0.0-use.local
+  resolution: "@vapar/app@workspace:application"
+  languageName: unknown
+  linkType: soft
+
 "vapar@workspace:.":
   version: 0.0.0-use.local
   resolution: "vapar@workspace:."
