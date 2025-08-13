@@ -1,0 +1,59 @@
+{
+    "folders": [
+        {
+            "name": "@vapar/backend",
+            "path": "vapar"
+        },
+        {
+			"name": "@vapar/repository",
+			"path": "."
+		}
+    ],
+    	"settings": {
+		"files.exclude": {
+			"vapar": true,
+			".yarn": true,
+			"node_modules": true,
+			"libs": true,
+			"**/__pycache__": true,
+			"**/.mypy_cache": true,
+			"**/.ruff_cache": true,
+			"**/.pytest_cache": true,
+			"build": true,
+			"dist": true,
+		},
+		"[python]": {
+			"editor.defaultFormatter": "charliermarsh.ruff",
+			"editor.rulers": [
+				88
+			],
+			"editor.formatOnSave": true,
+			"editor.codeActionsOnSave": {
+				"source.fixAll": "explicit",
+				"source.organizeImports": "explicit",
+			},
+		},
+		"[javascriptreact]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[javascript]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"git.ignoreLimitWarning": true,
+		"python.analysis.typeCheckingMode": "standard",
+		"python.languageServer": "Pylance",
+		"ruff.organizeImports": true,
+		"ruff.configuration": "pyproject.toml",
+		"ruff.configurationPreference": "filesystemFirst"
+	},
+	"extensions": {
+		"recommendations": [
+			"njpwerner.autodocstring",
+			"charliermarsh.ruff",
+			"bradlc.vscode-tailwindcss",
+			"esbenp.prettier-vscode"
+		]
+	},
+}

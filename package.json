@@ -1,0 +1,7 @@
+{
+  "name": "vapar",
+  "packageManager": "yarn@3.5.0",
+  "workspaces": [
+    "lib/*"
+  ]
+}
