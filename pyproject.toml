@@ -21,6 +21,9 @@ vapar = { path = "application", develop = true }
 pytest = "^8.4.1"
 pytest-django = "^4.11.1"
 pytest-httpx = "^0.35.0"
+coverage = "^7.10.3"
+pytest-coverage = "^0.0"
+pytest-asyncio = "^1.1.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

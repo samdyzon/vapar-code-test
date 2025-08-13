@@ -20,6 +20,7 @@
 			"**/.mypy_cache": true,
 			"**/.ruff_cache": true,
 			"**/.pytest_cache": true,
+			"**/.coverage": true,
 			"build": true,
 			"dist": true,
 		},

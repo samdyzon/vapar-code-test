@@ -23,5 +23,5 @@ daphne = "^4.2.1"
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "vapar.settings.local"
 pythonpath = "vapar tests"
-python_files = "tests/**/test_*.py"
+python_files = "tests/test_*.py"
 addopts = "-p no:warnings --cov=. "
