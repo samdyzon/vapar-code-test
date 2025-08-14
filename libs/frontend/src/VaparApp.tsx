@@ -1,26 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { createHashRouter, RouterProvider } from "react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const App = () => {
-  const [count, setCount] = useState(0)
+import { RepoSearch } from "./components/RepoSearch";
+import { RepoDetails, loader as repoLoader } from "./components/RepoDetails";
 
-  return (
-    <>
-      <h1 className="text-lg">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 10,
+    },
+  },
+});
+
+let router = createHashRouter([
+  {
+    path: "/",
+    Component: RepoSearch,
+  },
+  {
+    path: "/repos/:owner/:repo",
+    Component: RepoDetails,
+    loader: repoLoader(queryClient),
+  },
+]);
 
 export const AppWrapper = () => {
-  return <App />
-}
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
+};
