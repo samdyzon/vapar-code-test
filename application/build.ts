@@ -4,7 +4,7 @@ const fs = require("node:fs");
 
 esbuild
   .build({
-    entryPoints: ["static/vapar.tsx"],
+    entryPoints: ["vapar/static/vapar.tsx"],
     bundle: true,
     metafile: true,
     outdir: "build",

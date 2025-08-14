@@ -10,6 +10,8 @@ requires-python = ">=3.13"
 
 [tool.poetry]
 package-mode = false
+exclude = ["static"]
+
 
 [tool.poetry.dependencies]
 python = "^3.13.6"
