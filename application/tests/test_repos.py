@@ -66,7 +66,7 @@ async def test_search_failed_404(httpx_mock):
     expected_response = {"total_count": 10, "incomplete_results": False, "items": []}
     httpx_mock.add_response(json=expected_response)
 
-    request = factory.get("/api/repos")
+    request = factory.get("/api/repos?query=python+in:topics")
     response = await repos(request)  # type: ignore
 
     assert response.status_code == 404
@@ -78,7 +78,7 @@ async def test_search_failed_rate_limit(httpx_mock):
     expected_response = {}
     httpx_mock.add_response(json=expected_response, status_code=422)
 
-    request = factory.get("/api/repos")
+    request = factory.get("/api/repos?query=python+in:topics")
     response = await repos(request)  # type: ignore
 
     assert response.status_code == 429
@@ -90,7 +90,7 @@ async def test_search_failed_503(httpx_mock):
     expected_response = {}
     httpx_mock.add_response(json=expected_response, status_code=503)
 
-    request = factory.get("/api/repos")
+    request = factory.get("/api/repos?query=python+in:topics")
     response = await repos(request)  # type: ignore
 
     assert response.status_code == 503

@@ -33,7 +33,7 @@ async def repos(request):
         )
 
         # Assume: If you get a 422 but have a query, you are probably rate-limited?
-        if response.status_code == 429:
+        if response.status_code == 422:
             return Response(
                 {"error": "You have been rate limited by GitHub, try again later."},
                 status=status.HTTP_429_TOO_MANY_REQUESTS,
