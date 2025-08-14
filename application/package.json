@@ -1,3 +1,9 @@
 {
-    "name": "@vapar/app"
+    "name": "@vapar/app",
+    "scripts": {
+        "build": "node build.ts"
+    },
+    "dependencies": {
+        "@hotwired/stimulus": "^3.2.2"
+    }
 }
