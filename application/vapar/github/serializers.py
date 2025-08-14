@@ -22,3 +22,4 @@ class RepoDetailSerializer(Serializer):
     forks_count = serializers.IntegerField()
     open_issues_count = serializers.IntegerField()
     language = serializers.CharField()
+    html_url = serializers.CharField()

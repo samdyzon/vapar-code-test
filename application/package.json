@@ -4,6 +4,7 @@
         "build": "node build.ts"
     },
     "dependencies": {
-        "@hotwired/stimulus": "^3.2.2"
+        "@hotwired/stimulus": "^3.2.2",
+        "preline": "^3.2.3"
     }
 }

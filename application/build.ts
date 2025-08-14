@@ -15,9 +15,9 @@ esbuild
     },
     target: ["esnext"],
     define: {
-      // "process.env.NODE_ENV": "'production'",
+      "process.env.NODE_ENV": "'production'",
     },
-    // minify: true,
+    minify: true,
     splitting: false,
     format: "esm",
     sourcemap: true,

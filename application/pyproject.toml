@@ -19,6 +19,7 @@ djangorestframework = ">=3.16.1,<4.0.0"
 adrf = "^0.1.9"
 httpx = ">=0.28.1,<0.29.0"
 daphne = "^4.2.1"
+django-cors-headers = "^4.7.0"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "vapar.settings.local"

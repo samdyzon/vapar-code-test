@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
+    "corsheaders",
     "daphne",
     "github",
     "django.contrib.staticfiles",
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -95,3 +97,5 @@ REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
     "UNAUTHENTICATED_USER": None,
 }
+
+CORS_ALLOW_ALL_ORIGINS = True

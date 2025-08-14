@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "../../node_modules/preline/variants.css";
 
 @source "../../libs/frontend/src/*.tsx";
+@source "../../libs/frontend/src/**/*.tsx";
 @source "../vapar/templates/*.html";
