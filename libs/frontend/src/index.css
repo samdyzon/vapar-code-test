@@ -1,4 +1,2 @@
 @import "tailwindcss";
-@plugin "flyonui" {
-  themes: soft --default;
-}
+@import "../../../node_modules/preline/variants.css";
