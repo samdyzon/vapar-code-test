@@ -8,6 +8,7 @@ factory = APIRequestFactory()
 
 @pytest_asyncio.fixture
 async def demo_repo():
+    """Simple fixture for a search repos response"""
     return {
         "name": "test-repo",
         "full_name": "This is a test repo",
@@ -21,6 +22,7 @@ async def demo_repo():
 
 @pytest_asyncio.fixture
 async def demo_repo_detail():
+    """Simple fixture for a detail response - does not need 'owner'"""
     return {
         "name": "test-repo",
         "full_name": "This is a test repo",
@@ -60,6 +62,7 @@ async def test_search_success(httpx_mock, demo_repo):
 
 @pytest.mark.asyncio
 async def test_search_failed_404(httpx_mock):
+    """Test that we pass back a 404 when items is empty."""
     expected_response = {"total_count": 10, "incomplete_results": False, "items": []}
     httpx_mock.add_response(json=expected_response)
 
@@ -71,6 +74,7 @@ async def test_search_failed_404(httpx_mock):
 
 @pytest.mark.asyncio
 async def test_search_failed_rate_limit(httpx_mock):
+    """Test that we return a 429 when rate limited (GitHub sends 422)"""
     expected_response = {}
     httpx_mock.add_response(json=expected_response, status_code=422)
 
@@ -82,6 +86,7 @@ async def test_search_failed_rate_limit(httpx_mock):
 
 @pytest.mark.asyncio
 async def test_search_failed_503(httpx_mock):
+    """Test that we return a 503 if GitHub throws a 503"""
     expected_response = {}
     httpx_mock.add_response(json=expected_response, status_code=503)
 
@@ -93,6 +98,7 @@ async def test_search_failed_503(httpx_mock):
 
 @pytest.mark.asyncio
 async def test_detail_success(httpx_mock, demo_repo_detail):
+    """Test that we get a successful response and return the right status codes"""
     httpx_mock.add_response(json=demo_repo_detail)
 
     request = factory.get("/api/repo/test/test")
@@ -104,12 +110,14 @@ async def test_detail_success(httpx_mock, demo_repo_detail):
         "stargazers_count": 1,
         "forks_count": 1,
         "open_issues_count": 1,
+        "html_url": "https://github.com/owner/test-repo",
         "language": "python",
     }
 
 
 @pytest.mark.asyncio
 async def test_detail_404(httpx_mock):
+    """Test that we return a 404 if github cannot find a repo"""
     httpx_mock.add_response(json={}, status_code=404)
 
     request = factory.get("/api/repo/test/test")
@@ -120,6 +128,8 @@ async def test_detail_404(httpx_mock):
 
 @pytest.mark.asyncio
 async def test_detail_403(httpx_mock):
+    """Test that we return a 403 if we don't have permission to a repo"""
+
     httpx_mock.add_response(json={}, status_code=403)
 
     request = factory.get("/api/repo/test/test")
@@ -130,6 +140,7 @@ async def test_detail_403(httpx_mock):
 
 @pytest.mark.asyncio
 async def test_detail_503(httpx_mock):
+    """Test that we return a 503 if github is down"""
     httpx_mock.add_response(json={}, status_code=503)
 
     request = factory.get("/api/repo/test/test")
