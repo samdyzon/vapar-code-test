@@ -6,6 +6,7 @@
 !.yarn/versions
 node_modules/
 mise.toml
+build/
 .venv/
 **/*.egg-info
 *.pyc

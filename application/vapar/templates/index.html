@@ -1,5 +1,16 @@
-<html>
-    <body>
-        Hello
-    </body>
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'vapar.css' %}" rel="stylesheet">
+    <title>VAPAR Systems - Demo App</title>
+  </head>
+  <body>
+    <div data-controller="app">
+        <div data-app-target="container"></div>
+    </div>
+    <script type="module" src="{% static 'vapar.js' %}"></script>
+  </body>
 </html>

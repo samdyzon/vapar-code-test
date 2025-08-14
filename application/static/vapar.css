@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+@source "../../libs/frontend/src/*.tsx";
+@source "../vapar/templates/*.html";
