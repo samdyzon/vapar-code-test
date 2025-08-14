@@ -4,6 +4,10 @@
             "name": "@vapar/application",
             "path": "application"
         },
+		{
+            "name": "@vapar/frontend",
+            "path": "libs/frontend"
+        },
         {
 			"name": "@vapar/repository",
 			"path": "."
