@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const Error = ({error}) => {
-    console.log(error)
   return (
         <div className="text-center py-10 px-4 sm:px-6 lg:px-8">
           <h1 className="block text-7xl font-bold text-gray-800 sm:text-9xl">

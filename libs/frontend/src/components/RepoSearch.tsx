@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import {
-  QueryClient,
-  QueryClientProvider,
-  QueryErrorResetBoundary,
   useQuery,
-  useQueryClient,
 } from "@tanstack/react-query";
 import { useDebouncedCallback } from "use-debounce";
 import { Link } from "react-router-dom";
