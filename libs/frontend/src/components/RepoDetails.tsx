@@ -3,7 +3,7 @@ import type { LoaderFunctionArgs } from "react-router-dom";
 import type { QueryClient } from "@tanstack/react-query";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { Link, useLoaderData } from "react-router-dom";
-import { Error } from "./Error";
+import { Error as ErrorComponent } from "./Error";
 
 export const getRepoDetails = async ({ owner, repo }) => {
   let url = `http://localhost:8000/api/repo/${owner}/${repo}`;
@@ -52,7 +52,7 @@ export const RepoDetails = () => {
   return (
     <>
       {data.error ? (
-        <Error error={data.error} />
+        <ErrorComponent error={data.error} />
       ) : (
         <div className="p-4 flex flex-col bg-white">
           <div className="pb-2 flex flex-wrap justify-between items-center gap-2 border-b border-dashed border-gray-200">
