@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import include, path
 
 
-async def index(request: "HttpRequest") -> "HttpResponse":
+async def index(request):
     """Render the index page as static html.
 
     Args:

@@ -3,6 +3,8 @@ from rest_framework import serializers
 
 
 class RepoListSerializer(Serializer):
+    """Serialize a single search result from GitHub"""
+
     name = serializers.CharField()
     full_name = serializers.CharField()
     html_url = serializers.CharField()
@@ -16,6 +18,8 @@ class RepoListSerializer(Serializer):
 
 
 class RepoDetailSerializer(Serializer):
+    """Serialize a single repository from the detail API in GitHub"""
+
     full_name = serializers.CharField()
     description = serializers.CharField()
     stargazers_count = serializers.IntegerField()

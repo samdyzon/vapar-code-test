@@ -8,6 +8,14 @@ from github.serializers import RepoDetailSerializer, RepoListSerializer
 
 @api_view(["GET"])
 async def repos(request):
+    """Get a list of repos based on a query to GitHub.
+
+    Args:
+        request (HttpRequest): The Request
+
+    Returns:
+        HttpResponse: The Response
+    """
     query = request.query_params.get("query", "")
 
     async with httpx.AsyncClient() as client:
@@ -41,6 +49,16 @@ async def repos(request):
 
 @api_view(["GET"])
 async def repo(request, owner, repo):
+    """Get a list of repos based on a query to GitHub.
+
+    Args:
+        request (HttpRequest): The Request
+        owner (str): The name of the owner
+        repo (str): The name of the repo
+
+    Returns:
+        HttpResponse: The Response
+    """
     async with httpx.AsyncClient() as client:
         response = await client.get(
             f"https://api.github.com/repos/{owner}/{repo}",
