@@ -24,7 +24,7 @@ This makes life much easier when configuring VSCode
 
 # Setup Instructions
 
-You can use the VSCode `vpar.code-workspace` file to open the project using a multi-root workspace.
+You can use the VSCode `vapar.code-workspace` file to open the project using a multi-root workspace.
 I set up the repository to work natively with VSCode.
 
 Navigate to the project root directory in a terminal and run:
